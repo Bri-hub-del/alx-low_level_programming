@@ -5,11 +5,11 @@
  */
 void print_alphabet_x10(void)
 {
-	int lowercase;
-
-	for (lowercase = 'a'; lowercase <= 'z'; lowercase++)
+	int count = 0;
+	char lowercase;	while (count++ <=  9)
 	{
-		_putchar(lowercase(10));
+		for (lowercase = 'a' ; lowercase <= 'z' ; lowercase++)
+			_putchar(lowercase);
+		_putchar('\n');
 	}
-	_putchar('\n');
 }
