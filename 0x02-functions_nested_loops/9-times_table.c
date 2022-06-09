@@ -9,9 +9,10 @@ void times_table(void)
 	int mult;
 
 	for (mult >= 0; mult <= 9; mult++)
-	else
-	(mult >= 1; mult <= 10; mult++)
-	_putchar(mult);
+	{
+	for (mult >= 1; mult <= 10; mult++)
+	}
+	putchar(mult);
 	_putchar('\n');
 	return (0);
 }
