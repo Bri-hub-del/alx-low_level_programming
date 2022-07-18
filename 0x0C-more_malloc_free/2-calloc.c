@@ -1,42 +1,23 @@
-#include "main.h"
 #include <stdlib.h>
-
 /**
- * *str_concat - concatenates two strings
- * @s1: first string
- * @s2: second string
- * Return: pointer to new space in memory or null
- **/
+ * *_calloc - call
+ * @nmemb: n
+ * @size: size
+ * Return: 0
+ */
 
-char *str_concat(char *s1, char *s2)
+void *_calloc(unsigned int nmemb, unsigned int size)
 
 {
-	char *strDup;
-	int a, b;
+	unsigned int a;
+	char *memory;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-	a = b = 0;
-	while (s1[a] != '\0')
-		a++;
-	while (s2[b] != '\0')
-		b++;
-	strDup = malloc(sizeof(char) * (a + b + 1));
-	if (strDup == NULL)
+	if (nmemb == 0 || size == 0)
 		return (NULL);
-	a = b = 0;
-	while (s1[a] != '\0')
-	{
-		strDup[a] = s1[a];
-		a++;
-	}
-	while (s2[b] != '\0')
-	{
-		strDup[a] = s2[b];
-		a++, b++;
-	}
-	strDup[a] = '\0';
-	return (strDup);
+	memory = malloc(nmemb * size);
+	if (memory == NULL)
+		return (NULL);
+	for (a = 0; a < nmemb * size; a++)
+		*(memory + a) = 0;
+	return ((void *)memory);
 }
